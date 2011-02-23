@@ -6,6 +6,10 @@ export EDITOR=vim
 alias ls='ls -G --color'
 alias la='ls -al --color'
 
+##
+# git flow
+source $HOME/.zsh/git-flow-completion/git-flow-completion.zsh
+
 ## Environment variable configuration
 #
 # LANG

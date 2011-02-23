@@ -22,3 +22,6 @@
 [submodule ".vim/bundle/buftabs"]
 	path = .vim/bundle/buftabs
 	url = git://github.com/vim-scripts/buftabs.git
+[submodule ".zsh/git-flow-completion"]
+	path = .zsh/git-flow-completion
+	url = git://github.com/bobthecow/git-flow-completion.git
