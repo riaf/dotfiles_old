@@ -4,3 +4,4 @@ GSYMS
 GTAGS
 /.zsh/history
 /.zsh/screen-hardcopy
+/.vim/.netrwhist

@@ -25,3 +25,9 @@
 [submodule ".zsh/git-flow-completion"]
 	path = .zsh/git-flow-completion
 	url = git://github.com/bobthecow/git-flow-completion.git
+[submodule ".vim/bundle/unite"]
+	path = .vim/bundle/unite
+	url = git://github.com/Shougo/unite.vim.git
+[submodule ".vim/bundle/unite-outline"]
+	path = .vim/bundle/unite-outline
+	url = git://github.com/h1mesuke/unite-outline.git
