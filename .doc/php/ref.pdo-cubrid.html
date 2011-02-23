@@ -1,0 +1,390 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>CUBRID 関数 (PDO_CUBRID)</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="pdo.drivers.html">PDO ドライバ</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ref.pdo-cubrid.connection.html">PDO_CUBRID DSN</a></div>
+ <div class="up"><a href="pdo.drivers.html">PDO ドライバ</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="ref.pdo-cubrid" class="reference">
+  <h1 class="title">CUBRID 関数 (PDO_CUBRID)</h1>
+  
+  <div class="partintro">
+
+   <div class="section" id="pdo-cubrid.intro" name="pdo-cubrid.intro">
+   <h2 class="title">導入</h2>
+    <p class="para">
+     PDO_CUBRID は <a href="intro.pdo.html" class="link">PHP Data Objects (PDO) インターフェイス</a>
+     を実装したドライバで、PHP から CUBRID データベースにアクセスするためのものです。
+    </p>
+    <blockquote><p><b class="note">注意</b>: 
+    <p class="para">
+     現在のバージョンの PDO_CUBRID は、持続的接続や lob 型に対応していません。
+    </p>
+   </p></blockquote>
+   </div>
+    
+   
+   
+
+
+<div class="section" id="ref.pdo-cubrid.installation" name="ref.pdo-cubrid.installation">
+ <h2 class="title">インストール手順</h2>
+ <p class="para">
+  PDO_CUBRID 拡張モジュールをビルドするには、PHP を動かしているシステム上に
+  CUBRID DBMS をインストールしなければなりません。
+ </p>
+ <p class="para">
+  PDO_CUBRID は <a href="http://pecl.php.net/" class="link external">&raquo; PECL</a> 拡張モジュールなので、
+  <a href="install.pecl.html" class="xref">PECL 拡張モジュールのインストール</a> の手順に従えば
+  PDO_CUBRID をインストールできます。<strong class="command">configure</strong>
+  コマンドを実行するときに、次のようにして CUBRID のベースディレクトリの場所を指定します。
+  <div class="example-contents screen">
+<div class="cdata"><pre>
+   bash$ ./configure --with-pdo-cubrid=/path/to/CUBRID[,shared]
+</pre></div>
+  </div>
+  <strong class="command">configure</strong> コマンドはデフォルトで、環境変数
+  <i>CUBRID</i> の値を使います。
+ </p>
+ <p class="para">
+   この <acronym title="PHP Extension and Application Repository">PECL</acronym>
+拡張モジュールの <acronym title="Dynamic Link Library">DLL</acronym> は、現在存在しません。
+<a href="install.windows.building.html" class="link">Windows でのビルド</a>
+も参照ください
+  </p>
+  <p class="para">
+   Linux や Windows への手動でのインストールに関する情報は、
+   PECL の CUBRID パッケージに含まれる build-guide.html を参照ください。
+  </p>
+</div>
+
+
+
+
+   <div class="section" id="ref.pdo-cubrid.features.cursors" name="ref.pdo-cubrid.features.cursors">
+    <h2 class="title">スクロール可能なカーソル</h2>
+    <p class="para">
+     PDO_CUBRID はスクロール可能なカーソルをサポートしており、デフォルトの型は前進のみのカーソルです。
+     PDO::setAttribute を使えばカーソルの型を変えることができます。
+    </p>
+   </div>
+   <div class="section" id="ref.pdo-cubrid.features.autocommit" name="ref.pdo-cubrid.features.autocommit">
+    <h2 class="title">Autocommit</h2>
+    <p class="para">
+     PDO_CUBRID は自動コミットをサポートしており、デフォルトでは無効になっています。
+     PDO::setAttribute を使えば有効にすることができます。 
+    </p>
+   </div>
+   <div class="section" id="ref.pdo-cubrid.features.timeout" name="ref.pdo-cubrid.features.timeout">
+    <h2 class="title">Timeout</h2>
+    <p class="para">
+     PDO_CUBRID は sql ステートメントの実行時のタイムアウトの設定をサポートしています。
+     PDO::setAttribute を使えばタイムアウトの値を設定できます。
+    </p>
+   </div>
+
+   
+   
+
+
+<div class="section" id="pdo-cubrid.constants" name="pdo-cubrid.constants">
+ <h2 class="title">定義済み定数</h2>
+ <p class="simpara">このドライバでは以下の定数が定義されて
+います。これは拡張モジュールが PHP に組み込まれているか、実行時に動的にロード
+されている場合のみ使用可能です。さらに、これらのドライバ固有の定数は
+そのドライバを使用している場合にのみ使用されます。
+あるドライバ固有の属性を別のドライバで使うと、予期せぬ結果を引き起こします。
+もし複数のドライバを使用しているコードを実行している場合、
+<span class="function"><a href="pdo.getattribute.html" class="function">PDO::getAttribute()</a></span> で <b><tt>PDO_ATTR_DRIVER_NAME</tt></b>
+属性を使用することで、使用中のドライバ名を調べることが可能です。</p>
+ <dl>
+
+  <dt>
+
+   <span class="term">
+    <b><tt>PDO::CUBRID_INCLUDE_OID</tt></b>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </span>
+   <dd>
+
+    <span class="simpara">
+     クエリの実行後に OID を取得するかどうかを決めるために使います。
+    </span>
+   </dd>
+
+  </dt>
+
+  <dt>
+
+   <span class="term">
+    <b><tt>PDO::CUBRID_SCH_TABLE</tt></b>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </span>
+   <dd>
+
+    <p class="para">
+     PDO::cubrid_schema 関数が使うスキーマ型。
+    </p>
+   </dd>
+
+  </dt>
+
+  <dt>
+
+   <span class="term">
+    <b><tt>PDO::CUBRID_SCH_VIEW</tt></b>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </span>
+   <dd>
+
+    <p class="para">
+     PDO::cubrid_schema 関数が使うスキーマ型。
+    </p>
+   </dd>
+
+  </dt>
+
+  <dt>
+
+   <span class="term">
+    <b><tt>PDO::CUBRID_SCH_QUERY_SPEC</tt></b>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </span>
+   <dd>
+
+    <p class="para">
+     PDO::cubrid_schema 関数が使うスキーマ型。
+    </p>
+   </dd>
+
+  </dt>
+
+  <dt>
+
+   <span class="term">
+    <b><tt>PDO::CUBRID_SCH_ATTRIBUTE</tt></b>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </span>
+   <dd>
+
+    <p class="para">
+     PDO::cubrid_schema 関数が使うスキーマ型。
+    </p>
+   </dd>
+
+  </dt>
+
+  <dt>
+
+   <span class="term">
+    <b><tt>PDO::CUBRID_SCH_TABLE_ATTRIBUTE</tt></b>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </span>
+   <dd>
+
+    <p class="para">
+     PDO::cubrid_schema 関数が使うスキーマ型。
+    </p>
+   </dd>
+
+  </dt>
+
+  <dt>
+
+   <span class="term">
+    <b><tt>PDO::CUBRID_SCH_METHOD</tt></b>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </span>
+   <dd>
+
+    <p class="para">
+     PDO::cubrid_schema 関数が使うスキーマ型。
+    </p>
+   </dd>
+
+  </dt>
+
+  <dt>
+
+   <span class="term">
+    <b><tt>PDO::CUBRID_SCH_TABLE_METHOD</tt></b>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </span>
+   <dd>
+
+    <p class="para">
+     PDO::cubrid_schema 関数が使うスキーマ型。
+    </p>
+   </dd>
+
+  </dt>
+
+  <dt>
+
+   <span class="term">
+    <b><tt>PDO::CUBRID_SCH_METHOD_FILE</tt></b>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </span>
+   <dd>
+
+    <p class="para">
+     PDO::cubrid_schema 関数が使うスキーマ型。
+    </p>
+   </dd>
+
+  </dt>
+
+  <dt>
+
+   <span class="term">
+    <b><tt>PDO::CUBRID_SCH_SUPER_TABLE</tt></b>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </span>
+   <dd>
+
+    <p class="para">
+     PDO::cubrid_schema 関数が使うスキーマ型。
+    </p>
+   </dd>
+
+  </dt>
+
+  <dt>
+
+   <span class="term">
+    <b><tt>PDO::CUBRID_SCH_SUB_TABLE</tt></b>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </span>
+   <dd>
+
+    <p class="para">
+     PDO::cubrid_schema 関数が使うスキーマ型。
+    </p>
+   </dd>
+
+  </dt>
+
+  <dt>
+
+   <span class="term">
+    <b><tt>PDO::CUBRID_SCH_CONSTRAINT</tt></b>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </span>
+   <dd>
+
+    <p class="para">
+     PDO::cubrid_schema 関数が使うスキーマ型。
+    </p>
+   </dd>
+
+  </dt>
+
+  <dt>
+
+   <span class="term">
+    <b><tt>PDO::CUBRID_SCH_TRIGGER</tt></b>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </span>
+   <dd>
+
+    <p class="para">
+     PDO::cubrid_schema 関数が使うスキーマ型。
+    </p>
+   </dd>
+
+  </dt>
+
+  <dt>
+
+   <span class="term">
+    <b><tt>PDO::CUBRID_SCH_TABLE_PRIVILEGE</tt></b>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </span>
+   <dd>
+
+    <p class="para">
+     PDO::cubrid_schema 関数が使うスキーマ型。
+    </p>
+   </dd>
+
+  </dt>
+
+  <dt>
+
+   <span class="term">
+    <b><tt>PDO::CUBRID_SCH_COL_PRIVILEGE</tt></b>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </span>
+   <dd>
+
+    <p class="para">
+     PDO::cubrid_schema 関数が使うスキーマ型。
+    </p>
+   </dd>
+
+  </dt>
+
+  <dt>
+
+   <span class="term">
+    <b><tt>PDO::CUBRID_SCH_DIRECT_SUPER_TABLE</tt></b>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </span>
+   <dd>
+
+    <p class="para">
+     PDO::cubrid_schema 関数が使うスキーマ型。
+    </p>
+   </dd>
+
+  </dt>
+
+  <dt>
+
+   <span class="term">
+    <b><tt>PDO::CUBRID_SCH_PRIMARY_KEY</tt></b>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </span>
+   <dd>
+
+    <p class="para">
+     PDO::cubrid_schema 関数が使うスキーマ型。
+    </p>
+   </dd>
+
+  </dt>
+
+ </dl>
+
+</div>
+
+
+
+
+  </div>
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+ <h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="ref.pdo-cubrid.connection.html">PDO_CUBRID DSN</a> — CUBRID データベースへの接続</li><li><a href="function.pdo-cubrid_schema.html">PDO::cubrid_schema</a> — 指定したスキーマ情報を取得する</li></ul>
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="pdo.drivers.html">PDO ドライバ</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ref.pdo-cubrid.connection.html">PDO_CUBRID DSN</a></div>
+ <div class="up"><a href="pdo.drivers.html">PDO ドライバ</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

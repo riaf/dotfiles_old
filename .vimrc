@@ -36,6 +36,13 @@ let g:neocomplcache_enable_auto_select = 0
 let g:neocomplcache_enable_underbar_completion = 1
 
 
+""
+" vim-ref
+let g:ref_phpmanual_path = $HOME . '/.doc/php'
+" 常人にはおすすめできない
+noremap <C-M> :Unite ref/phpmanual<CR>
+
+
 "
 " Status Line
 set laststatus=2

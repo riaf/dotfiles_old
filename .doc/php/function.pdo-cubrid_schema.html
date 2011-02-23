@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>指定したスキーマ情報を取得する</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="ref.pdo-cubrid.connection.html">PDO_CUBRID DSN</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ref.pdo-dblib.html">MS SQL Server (PDO)</a></div>
+ <div class="up"><a href="ref.pdo-cubrid.html">CUBRID (PDO)</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="function.pdo-cubrid_schema" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">PDO::cubrid_schema</h1>
+  <p class="verinfo">(バージョン情報なし。おそらく SVN 版にしか存在しないでしょう)</p><p class="refpurpose"><span class="refname">PDO::cubrid_schema</span> &mdash; <span class="dc-title">指定したスキーマ情報を取得する</span></p>
+
+ </div>
+ <div class="refsect1 description">
+  <h3 class="title">説明</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">array</span> <span class="methodname"><b>PDO::cubrid_schema</b></span>
+    ( <span class="methodparam"><span class="type">int</span> <tt class="parameter">$schema_type</tt></span>  
+   [, <span class="methodparam"><span class="type">string</span> <tt class="parameter">$table_name</tt></span> 
+   [, <span class="methodparam"><span class="type">string</span> <tt class="parameter">$col_name</tt></span>  
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   <span class="function"><a href="function.cubrid-schema.html" class="function">cubrid_schema()</a></span> 関数を使うと、指定したスキーマ情報をデータベースから取得することができます。
+   テーブルの情報を知りたい場合は <i><tt class="parameter">table_name</tt></i> を指定しなければなりません。また、
+   カラムの情報を知りたければ <i><tt class="parameter">col_name</tt></i> を指定しなければなりません
+   (PDO::CUBRID_SCH_COL_PRIVILEGE とともにしか使えません)。
+  </p>
+ </div>
+
+ <div class="refsect1 parameters">
+  <h3 class="title">パラメータ</h3>
+  <p class="para">
+   <dl>
+
+    <dt>
+
+     <span class="term"><i><tt class="parameter">schema_type</tt></i></span>
+     <dd>
+
+      <p class="para">
+       知りたいスキーマの型。
+      </p>
+     </dd>
+
+    </dt>
+
+    <dt>
+
+     <span class="term"><i><tt class="parameter">table_name</tt></i></span>
+     <dd>
+
+      <p class="para">
+       スキーマを知りたいテーブル。
+      </p>
+     </dd>
+
+    </dt>
+
+    <dt>
+
+     <span class="term"><i><tt class="parameter">col_name</tt></i></span>
+     <dd>
+
+      <p class="para">
+       スキーマを知りたいカラム。
+     </p>
+    </dd>
+
+   </dt>
+
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues">
+  <h3 class="title">返り値</h3>
+  <p class="para">
+    処理に成功すると、スキーマ情報を含む配列を返します。
+  </p>
+  <p class="para">
+    処理に失敗した場合は FALSE を返します。
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 examples">
+  <h3 class="title">例</h3>
+  <p class="para">
+   <div class="example">
+    <p><b>例1 <span class="function"><b>PDO::cubrid_schema()</b></span> の例</b></p>
+    <div class="example-contents"><p>
+     これは、game テーブルの主キーを取得する方法を示す例です。
+    </p></div>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$pk_list&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">cubrid_schema</span><span style="color: #007700">(</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">CUBRID_SCH_PRIMARY_KEY</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"game"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$pk_list</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="ref.pdo-cubrid.connection.html">PDO_CUBRID DSN</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ref.pdo-dblib.html">MS SQL Server (PDO)</a></div>
+ <div class="up"><a href="ref.pdo-cubrid.html">CUBRID (PDO)</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>
