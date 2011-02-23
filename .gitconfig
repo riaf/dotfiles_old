@@ -1,0 +1,18 @@
+[user]
+	name = Keisuke SATO
+	email = riaf@nequal.jp
+[core]
+	excludesfile = $HOME/.gitignore
+	editor = vim
+	pager = less
+[github]
+	user = riaf
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[alias]
+	st = status
+	up = pull --rebase
+	ci = commit -a
