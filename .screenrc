@@ -1,0 +1,9 @@
+autodetach on
+hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
+defscrollback 10000
+bind w windowlist -b
+# caption always "“%{b RK} %y/%m/%d(%D)%c:%s %{bu dr} | %-w%{=bu CK}%n %t%{-}%+w”
+startup_message off
+termcapinfo xterm* ti@:te@
+escape ^Z^z
+
