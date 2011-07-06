@@ -2,9 +2,16 @@
 # general
 #
 export EDITOR=vim
+export NODE_PATH=/usr/local/lib/node
+export PATH=$PATH:$HOME/node_modules/coffee-script/bin
 
-alias ls='ls -G --color'
-alias la='ls -al --color'
+##
+# switch env
+if [[ $OSTYPE == darwin* ]]; then
+    source $HOME/.zsh/darwin
+else
+    source $HOME/.zsh/linux
+fi
 
 ##
 # git flow
