@@ -1,10 +1,6 @@
 ""
 " どこかから拾ってきたものばかり！
 
-""
-" call pathogen
-call pathogen#runtime_append_all_bundles()
-
 syntax on
 set bs=indent,eol,start
 
