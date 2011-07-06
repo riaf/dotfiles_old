@@ -1,5 +1,29 @@
 ""
-" どこかから拾ってきたものばかり！
+" vundle setting
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+" My Bundles:
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/unite.vim'
+Bundle 'h1mesuke/unite-outline'
+Bundle 'thinca/vim-ref'
+Bundle 'tpope/vim-surround'
+Bundle 'thinca/vim-quickrun'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'buftabs'
+Bundle 'php_localvarcheck.vim'
+
+filetype plugin indent on
+
+
+""
+" 寄せ集めの vimrc
 
 syntax on
 set bs=indent,eol,start
