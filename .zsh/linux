@@ -1,3 +1,4 @@
 alias ls='ls --color'
 alias la='ls -al --color'
+eval `dircolors $HOME/.dir_colors`
 

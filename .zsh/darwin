@@ -2,3 +2,6 @@ source /usr/local/Cellar/coreutils/8.7/aliases
 
 alias ls='gls --color'
 alias la='gls -al --color'
+
+eval `/usr/local/bin/gdircolors $HOME/.dir_colors`
+
