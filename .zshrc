@@ -1,9 +1,12 @@
 ##
 # general
 #
+export TERM=xterm-256color
 export EDITOR=vim
 export NODE_PATH=/usr/local/lib/node
 export PATH=$PATH:$HOME/node_modules/coffee-script/bin
+
+eval `dircolors $HOME/.dir_colors`
 
 ##
 # switch env

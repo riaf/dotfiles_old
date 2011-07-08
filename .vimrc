@@ -14,8 +14,10 @@ Bundle 'Shougo/unite.vim'
 Bundle 'h1mesuke/unite-outline'
 Bundle 'thinca/vim-ref'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
 Bundle 'thinca/vim-quickrun'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'buftabs'
 Bundle 'php_localvarcheck.vim'
 
@@ -42,6 +44,15 @@ set smarttab
 set hidden
 set noswapfile
 set encoding=utf-8
+
+" 対応するカッコの強調表示をやめる
+let loaded_matchparen = 1
+
+" color scheme
+" let g:solarized_termcolors=256
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
 
 autocmd BufNewFile,BufRead *.twig setfiletype htmldjango
 
