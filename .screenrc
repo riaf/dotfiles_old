@@ -4,6 +4,9 @@ defscrollback 10000
 bind w windowlist -b
 # caption always "“%{b RK} %y/%m/%d(%D)%c:%s %{bu dr} | %-w%{=bu CK}%n %t%{-}%+w”
 startup_message off
-termcapinfo xterm* ti@:te@
+# termcapinfo xterm* ti@:te@
 escape ^Z^z
 
+attrcolor b ".I"
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+defbce on 

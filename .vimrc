@@ -9,17 +9,23 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles:
+Bundle 'Shougo/vimproc'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
 Bundle 'h1mesuke/unite-outline'
-Bundle 'thinca/vim-ref'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'thinca/vim-quickrun'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'buftabs'
-Bundle 'php_localvarcheck.vim'
+Bundle 'Align'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'tyru/open-browser.vim'
+Bundle 'groenewege/vim-less'
+Bundle 'thinca/vim-ref'
+Bundle 'scrooloose/syntastic'
+" Bundle 'php_localvarcheck.vim'
 
 filetype plugin indent on
 
@@ -46,7 +52,7 @@ set noswapfile
 set encoding=utf-8
 
 " 対応するカッコの強調表示をやめる
-let loaded_matchparen = 1
+" let loaded_matchparen = 1
 
 " color scheme
 " let g:solarized_termcolors=256
@@ -55,6 +61,12 @@ set background=dark
 colorscheme solarized
 
 autocmd BufNewFile,BufRead *.twig setfiletype htmldjango
+autocmd BufNewFile,BufRead *.md setfiletype markdown
+
+au FileType html setl sw=2 sts=2 et
+au FileType htmldjango setl sw=2 sts=2 et
+au FileType javascript setl sw=2 sts=2 et
+au FileType rst setl sw=2 sts=2 et
 
 
 ""
@@ -72,7 +84,7 @@ let g:neocomplcache_enable_underbar_completion = 1
 " vim-ref
 let g:ref_phpmanual_path = $HOME . '/.doc/php'
 " 常人にはおすすめできない
-noremap <C-S> :Unite ref/phpmanual<CR>
+" noremap <C-S> :Unite ref/phpmanual<CR>
 
 
 "
@@ -91,6 +103,11 @@ set statusline+=\ %{strftime('%c')}  " 時間
 set statusline+=%4l,%2c " 行、列
 set statusline+=%3p%%   " どこにいるか
 set statusline+=%<      " 折り返しの指定
+
+
+""
+" align php
+noremap = :Align=><CR>
 
 
 ""
@@ -147,6 +164,25 @@ call unite#set_substitute_pattern('file', '^;v', '~/.vim/')
 " unite-outline
 noremap <C-O> :Unite outline<CR>
 
+
+""
+" quickrun
+let g:quickrun_config = {}
+let g:quickrun_config['mkd'] = {
+      \ 'type': 'markdown/pandoc',
+      \ 'cmdopt': '-s',
+      \ 'outputter': 'browser'
+      \ }
+
+
+""
+" syntastic
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_jump=1
+let g:syntastic_auto_loc_list=2
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 ""
 " from sotarok

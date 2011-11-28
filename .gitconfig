@@ -16,3 +16,5 @@
 	st = status
 	up = pull --rebase
 	ci = commit -a
+[redmine]
+	apiKey = 1146ae7ffcea25777d6ee7cc6ec08d8b7433705d

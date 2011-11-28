@@ -6,3 +6,5 @@ GTAGS
 /.zsh/screen-hardcopy
 /.vim/.netrwhist
 /.vim/bundle
+.AppleDouble/
+.DS_Store

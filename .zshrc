@@ -3,8 +3,9 @@
 #
 export TERM=xterm-256color
 export EDITOR=vim
-export NODE_PATH=/usr/local/lib/node
-export PATH=$PATH:$HOME/node_modules/coffee-script/bin
+# export NODE_PATH=/usr/local/lib/node
+# export PATH=$PATH:$HOME/node_modules/coffee-script/bin
+# export NVM_DIR=$HOME/.nvm
 
 ##
 # switch env
@@ -17,6 +18,7 @@ fi
 ##
 # git flow
 source $HOME/.zsh/git-flow-completion/git-flow-completion.zsh
+alias gf='git flow'
 
 ## Environment variable configuration
 #
@@ -96,6 +98,9 @@ fpath=(~/.zshfunc $fpath)
 autoload -U compinit
 compinit -u
 
+# 補完の時に大文字小文字を区別しない
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
 # set terminal title including current directory
 #
 case "${TERM}" in
@@ -114,7 +119,7 @@ HARDCOPYFILE=$HOME/.zsh/screen-hardcopy
 touch $HARDCOPYFILE
 
 dabbrev-complete () {
-        local reply lines=80 # 80��ʬ
+        local reply lines=80
         screen -X eval "hardcopy -h $HARDCOPYFILE"
         reply=($(sed '/^$/d' $HARDCOPYFILE | sed '$ d' | tail -$lines))
         compadd - "${reply[@]%[*/=@|]}"
