@@ -57,13 +57,14 @@ set encoding=utf-8
 " color scheme
 " let g:solarized_termcolors=256
 let g:solarized_termcolors=256
-set background=dark
+" set background=dark
 colorscheme solarized
 
 autocmd BufNewFile,BufRead *.twig setfiletype htmldjango
 autocmd BufNewFile,BufRead *.md setfiletype markdown
 
 au FileType html setl sw=2 sts=2 et
+au FileType css setl sw=2 sts=2 et
 au FileType htmldjango setl sw=2 sts=2 et
 au FileType javascript setl sw=2 sts=2 et
 au FileType rst setl sw=2 sts=2 et
