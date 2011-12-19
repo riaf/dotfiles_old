@@ -13,10 +13,15 @@ endif
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler'
+NeoBundle 'Shougo/vim-vcs'
+NeoBundle 'Shougo/vimshell'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'thinca/vim-openbuf'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'thinca/vim-ref'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'buftabs'
@@ -24,7 +29,6 @@ NeoBundle 'Align'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'groenewege/vim-less'
-NeoBundle 'thinca/vim-ref'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'taxilian/VimDebugger'
 " NeoBundle 'php_localvarcheck.vim'
@@ -41,10 +45,10 @@ set bs=indent,eol,start
 
 set nobackup
 set expandtab
-set tabstop=4
+set tabstop=2
 set number
 set title
-set shiftwidth=4
+set shiftwidth=2
 set autoindent
 set hlsearch
 set modeline
@@ -66,11 +70,8 @@ colorscheme solarized
 autocmd BufNewFile,BufRead *.twig setfiletype htmldjango
 autocmd BufNewFile,BufRead *.md setfiletype markdown
 
-au FileType html setl sw=2 sts=2 et
-au FileType css setl sw=2 sts=2 et
-au FileType htmldjango setl sw=2 sts=2 et
-au FileType javascript setl sw=2 sts=2 et
-au FileType rst setl sw=2 sts=2 et
+au FileType php setl sw=4 sts=4 et
+au FileType mkd setl sw=4 sts=4 et
 
 
 ""
@@ -85,10 +86,15 @@ let g:neocomplcache_enable_underbar_completion = 1
 
 
 ""
+" vimfiler
+let g:vimfiler_as_default_explorer = 1
+
+
+""
 " vim-ref
 let g:ref_phpmanual_path = $HOME . '/.doc/php'
 " 常人にはおすすめできない
-" noremap <C-S> :Unite ref/phpmanual<CR>
+noremap <Space>h :Unite ref/phpmanual<CR>
 
 
 "
@@ -103,10 +109,17 @@ set statusline+=%r      " 読み取り専用フラグ
 set statusline+=%h      " ヘルプバッファ
 set statusline+=%w      " プレビューウィンドウ
 set statusline+=%=      " 区切り
-set statusline+=\ %{strftime('%c')}  " 時間
+set statusline+=\ %{strftime('%m\/%d\ %H:%M:%S')}  " 時間
 set statusline+=%4l,%2c " 行、列
 set statusline+=%3p%%   " どこにいるか
+set statusline+=\       " 区切り
+set statusline+=%{vcs#info('(%s)-[%b]','(%s)-[%b\|%a]')}
 set statusline+=%<      " 折り返しの指定
+
+
+""
+" vim-vcs
+let g:vimshell_right_prompt = 'vcs#info("(%s)-[%b]", "(%s)-[%b|%a]")'
 
 
 ""
