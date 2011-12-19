@@ -1,4 +1,4 @@
-source /usr/local/Cellar/coreutils/8.7/aliases
+source /usr/local/Cellar/coreutils/8.12/aliases
 
 alias ls='gls --color'
 alias la='gls -al --color'
