@@ -25,6 +25,7 @@ Bundle 'tyru/open-browser.vim'
 Bundle 'groenewege/vim-less'
 Bundle 'thinca/vim-ref'
 Bundle 'scrooloose/syntastic'
+Bundle 'taxilian/VimDebugger'
 " Bundle 'php_localvarcheck.vim'
 
 filetype plugin indent on
@@ -184,6 +185,15 @@ let g:syntastic_auto_loc_list=2
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+""
+" php-xdebug
+map <F11> :DbgStepInto<CR>
+map <F10> :DbgStepOver<CR>
+map <S-F11> :DbgStepOut<CR>
+map <F5> :DbgRun<CR>
+map <S-F5> :DbgDetach<CR>
+map <F8> :DbgToggleBreakpoint<CR>
 
 ""
 " from sotarok
