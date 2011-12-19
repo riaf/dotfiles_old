@@ -1,34 +1,36 @@
 ""
-" vundle setting
+" neobundle setting
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/vundle/
-call vundle#rc()
+if has('vim_starting')
+    set runtimepath+=~/.vim/neobundle/
 
-Bundle 'gmarik/vundle'
+    call neobundle#rc(expand('~/.vim/bundle'))
+endif
 
 " My Bundles:
-Bundle 'Shougo/vimproc'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/unite.vim'
-Bundle 'h1mesuke/unite-outline'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
-Bundle 'thinca/vim-quickrun'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'buftabs'
-Bundle 'Align'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'tyru/open-browser.vim'
-Bundle 'groenewege/vim-less'
-Bundle 'thinca/vim-ref'
-Bundle 'scrooloose/syntastic'
-Bundle 'taxilian/VimDebugger'
-" Bundle 'php_localvarcheck.vim'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'buftabs'
+NeoBundle 'Align'
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'groenewege/vim-less'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'taxilian/VimDebugger'
+" NeoBundle 'php_localvarcheck.vim'
 
-filetype plugin indent on
+filetype plugin on
+filetype indent on
 
 
 ""
