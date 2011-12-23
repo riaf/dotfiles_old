@@ -40,6 +40,9 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'taxilian/VimDebugger'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 't9md/vim-textmanip'
+NeoBundle 'JavaScript-syntax'
+NeoBundle 'IndentAnything'
+NeoBundle 'Javascript-Indentation'
 " NeoBundle 'php_localvarcheck.vim'
 
 filetype plugin on
