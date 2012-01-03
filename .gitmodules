@@ -1,9 +1,6 @@
 [submodule ".zsh/git-flow-completion"]
 	path = .zsh/git-flow-completion
 	url = git://github.com/bobthecow/git-flow-completion.git
-[submodule ".vim/vundle"]
-	path = .vim/vundle
-	url = git://github.com/gmarik/vundle.git
 [submodule ".vim/neobundle"]
 	path = .vim/neobundle
 	url = git://github.com/Shougo/neobundle.vim.git
