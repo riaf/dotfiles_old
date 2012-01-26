@@ -16,6 +16,8 @@ if has('vim_starting')
     call neobundle#rc(expand('~/.vim/bundle'))
 endif
 
+set fileformat=unix
+
 " My Bundles:
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neocomplcache'
@@ -29,6 +31,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'thinca/vim-openbuf'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
+NeoBundle 'ujihisa/shadow.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'buftabs'
@@ -89,6 +92,12 @@ set encoding=utf-8
 set directory=/tmp
 " 改行コードの自動認識
 set fileformats=unix,dos,mac
+" 検索時に大文字小文字を無視する
+set ignorecase
+" インクリメンタルサーチ
+set incsearch
+" コマンドラインの補完候補表示
+set wildmenu
 " □とか○の文字があってもカーソル位置がずれないようにす
 if exists('&ambiwidth')
   set ambiwidth=double
@@ -175,6 +184,10 @@ colorscheme solarized
 " save
 nnoremap <Space>w :<C-u>write<CR>
 
+" US キーだとこうなるよね
+noremap ;  :
+noremap :  ;
+
 " [h, j, k, l] <-> [gh, gj, gk, gl]
 noremap j gj
 noremap k gk
@@ -204,11 +217,11 @@ cnoremap <expr> /  getcmdtype() == '/' ? '\/' : '/'
 cnoremap <expr> ?  getcmdtype() == '?' ? '\?' : '?'
 
 " command window を使う (see http://vim-users.jp/2010/07/hack161/ )
-nnoremap <sid>(command-line-enter) q:
-xnoremap <sid>(command-line-enter) q:
-nnoremap <sid>(command-line-norange) q:<C-u>
-nmap :  <sid>(command-line-enter)
-xmap :  <sid>(command-line-enter)
+" nnoremap <sid>(command-line-enter) q:
+" xnoremap <sid>(command-line-enter) q:
+" nnoremap <sid>(command-line-norange) q:<C-u>
+" nmap :  <sid>(command-line-enter)
+" xmap :  <sid>(command-line-enter)
 
 " align php
 noremap = :Align=><CR>

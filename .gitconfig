@@ -1,6 +1,6 @@
 [user]
 	name = Keisuke SATO
-	email = riafweb@gmail.com
+	email = riaf@me.com
 [core]
 	excludesfile = $HOME/.gitignore
 	editor = vim
