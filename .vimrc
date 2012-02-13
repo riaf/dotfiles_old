@@ -22,6 +22,7 @@ set fileformat=unix
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite-ssh'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/vim-vcs'
 NeoBundle 'Shougo/vimshell'
@@ -172,9 +173,9 @@ set statusline+=%<      " 折り返しの指定
 " ------------------------------------------------------------------------------
 " colorscheme: "{{{
 
-let g:solarized_termcolors=256
-" set background=dark
-colorscheme solarized
+" let g:solarized_termcolors=256
+set background=dark
+" colorscheme solarized
 
 " }}}
 
