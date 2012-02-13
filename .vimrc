@@ -35,7 +35,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'ujihisa/shadow.vim'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'altercation/vim-colors-solarized'
+" NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'buftabs'
 NeoBundle 'Align'
 NeoBundle 'plasticboy/vim-markdown'
@@ -48,6 +48,7 @@ NeoBundle 't9md/vim-textmanip'
 NeoBundle 'JavaScript-syntax'
 NeoBundle 'IndentAnything'
 NeoBundle 'Javascript-Indentation'
+NeoBundle 'larssmit/vim-lucius'
 " NeoBundle 'php_localvarcheck.vim'
 
 filetype plugin on
@@ -176,6 +177,7 @@ set statusline+=%<      " 折り返しの指定
 
 " let g:solarized_termcolors=256
 set background=dark
+colorscheme lucius
 " colorscheme solarized
 
 " }}}
