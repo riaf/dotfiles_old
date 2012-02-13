@@ -7,5 +7,6 @@ GTAGS
 /.zsh/extras
 /.vim/.netrwhist
 /.vim/bundle
+/.doc/php
 .AppleDouble/
 .DS_Store
