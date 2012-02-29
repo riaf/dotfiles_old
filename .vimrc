@@ -27,6 +27,7 @@ NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/vim-vcs'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'heavenshell/unite-sf2'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-fugitive'
@@ -36,8 +37,8 @@ NeoBundle 'thinca/vim-ref'
 NeoBundle 'ujihisa/shadow.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 " NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'buftabs'
-NeoBundle 'Align'
+" NeoBundle 'buftabs'
+NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'groenewege/vim-less'
@@ -228,7 +229,7 @@ cnoremap <expr> ?  getcmdtype() == '?' ? '\?' : '?'
 " xmap :  <sid>(command-line-enter)
 
 " align php
-noremap = :Align=><CR>
+" noremap = :Align=><CR>
 
 " php-manual
 noremap <Space>h :Unite ref/phpmanual<CR>
@@ -344,6 +345,47 @@ map <F8> :DbgToggleBreakpoint<CR>
     set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
     set statusline+=%*
+
+  " }}}
+
+  "" vim-alignta: "{{{
+
+    nnoremap [unite] <Nop>
+    xnoremap [unite] <Nop>
+    nmap f [unite]
+    xmap f [unite]
+
+    let g:unite_source_alignta_preset_arguments = [
+          \ ["Align at '='", '=>\='],
+          \ ["Align at ':'", '01 :'],
+          \ ["Align at '|'", '|'   ],
+          \ ["Align at ')'", '0 )' ],
+          \ ["Align at ']'", '0 ]' ],
+          \ ["Align at '}'", '}'   ],
+          \]
+
+    let s:comment_leadings = '^\s*\("\|#\|/\*\|//\|<!--\)'
+    let g:unite_source_alignta_preset_options = [
+          \ ["Justify Left",      '<<' ],
+          \ ["Justify Center",    '||' ],
+          \ ["Justify Right",     '>>' ],
+          \ ["Justify None",      '==' ],
+          \ ["Shift Left",        '<-' ],
+          \ ["Shift Right",       '->' ],
+          \ ["Shift Left  [Tab]", '<--'],
+          \ ["Shift Right [Tab]", '-->'],
+          \ ["Margin 0:0",        '0'  ],
+          \ ["Margin 0:1",        '01' ],
+          \ ["Margin 1:0",        '10' ],
+          \ ["Margin 1:1",        '1'  ],
+          \
+          \ 'v/' . s:comment_leadings,
+          \ 'g/' . s:comment_leadings,
+          \]
+    unlet s:comment_leadings
+
+    nnoremap <silent> [unite]a :<C-u>Unite alignta:options<CR>
+    xnoremap <silent> [unite]a :<C-u>Unite alignta:arguments<CR>
 
   " }}}
 

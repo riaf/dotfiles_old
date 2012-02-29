@@ -2,7 +2,7 @@
 	name = Keisuke SATO
 	email = riaf@me.com
 [core]
-	excludesfile = $HOME/.gitignore
+	excludesfile = ~/.gitignore
 	editor = vim
 	pager = less
 [github]
@@ -13,9 +13,9 @@
 	branch = auto
 	interactive = auto
 [alias]
-	st = status
+	st = status -sb
 	up = pull --rebase
 	ci = commit -a
+	wd = diff --word-diff
+	lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
 	edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
-[redmine]
-	apiKey = 1146ae7ffcea25777d6ee7cc6ec08d8b7433705d
