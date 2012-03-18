@@ -6,7 +6,7 @@ source $HOME/.zsh/functions
 ################################################################################
 # ENV
 #
-export TERM=xterm-256color
+# export TERM=xterm-256color
 export EDITOR=vim
 export PATH=$HOME/local/bin:$PATH
 export LANG=ja_JP.UTF-8
@@ -26,6 +26,15 @@ fi
 source $HOME/.zsh/git-flow-completion/git-flow-completion.zsh
 alias gf='git flow'
 
+################################################################################
+# cdd
+autoload -Uz compinit
+compinit
+. $HOME/dotfiles/vendor/cdd/cdd
+
+chpwd() {
+  _cdd_chpwd
+}
 
 ################################################################################
 # extra settings
@@ -170,7 +179,6 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 ##
-# for screen
 #
 # if [ "$STY" != "" ]; then
 #     chpwd () { echo -n "_`dirs`\\" }

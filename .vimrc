@@ -26,6 +26,7 @@ NeoBundle 'Shougo/unite-ssh'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/vim-vcs'
 NeoBundle 'Shougo/vimshell'
+" NeoBundle 'Shougo/git-vim'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'heavenshell/unite-sf2'
@@ -37,7 +38,7 @@ NeoBundle 'thinca/vim-ref'
 NeoBundle 'ujihisa/shadow.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 " NeoBundle 'altercation/vim-colors-solarized'
-" NeoBundle 'buftabs'
+NeoBundle 'buftabs'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'tyru/open-browser.vim'
@@ -51,6 +52,7 @@ NeoBundle 'IndentAnything'
 NeoBundle 'Javascript-Indentation'
 NeoBundle 'larssmit/vim-lucius'
 " NeoBundle 'php_localvarcheck.vim'
+" NeoBundle 'mattn/benchvimrc-vim'
 
 filetype plugin on
 filetype indent on
@@ -250,7 +252,7 @@ map <F8> :DbgToggleBreakpoint<CR>
   "" buftabs: "{{{
     let g:buftabs_only_basename=1 " ファイル名だけ表示
     let g:buftabs_in_statusline=1 " ステータスラインに表示
-    noremap <Space>n :bnext<CR> " Space, Shift+Space でバッファを切り替え
+    noremap <Space>n :bnext<CR>
     noremap <Space>p :bprev<CR>
     nmap <C-h> <C-w>h " Ctrl+h, Ctrl+j, Ctrl+k, Ctrl+l でウィンドウ間を移動
     nmap <C-l> <C-w>l
@@ -273,6 +275,17 @@ map <F8> :DbgToggleBreakpoint<CR>
     inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
     " imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+    " Enable heavy omni completion.
+    " if !exists('g:neocomplcache_omni_patterns')
+    "   let g:neocomplcache_omni_patterns = {}
+    " endif
+    " let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+    " "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+    " let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+    " let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
+    " let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
   " }}} "neocomplcache
 
