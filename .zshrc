@@ -13,6 +13,12 @@ export LANG=ja_JP.UTF-8
 
 
 ################################################################################
+# aliases
+# alias screen="sl -e"
+alias t=tmux
+alias ta="tmux attach -t"
+
+################################################################################
 # switch env
 if [[ $OSTYPE == darwin* ]]; then
     source $HOME/.zsh/darwin

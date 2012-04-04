@@ -7,3 +7,6 @@
 [submodule "vendor/cdd"]
 	path = vendor/cdd
 	url = git://github.com/m4i/cdd.git
+[submodule "vendor/zsh-tmux-completion"]
+	path = vendor/zsh-tmux-completion
+	url = git@gist.github.com:ed31168876c79de0d2bd.git
