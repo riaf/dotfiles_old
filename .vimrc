@@ -24,7 +24,7 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-ssh'
 NeoBundle 'Shougo/vimfiler'
-NeoBundle 'Shougo/vim-vcs'
+" NeoBundle 'Shougo/vim-vcs'
 NeoBundle 'Shougo/vimshell'
 " NeoBundle 'Shougo/git-vim'
 NeoBundle 'h1mesuke/unite-outline'
@@ -35,8 +35,11 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'thinca/vim-openbuf'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
+NeoBundle 'kana/vim-smartinput'
 NeoBundle 'ujihisa/shadow.vim'
+NeoBundle 'jsx/jsx.vim'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'jade.vim'
 " NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'buftabs'
 NeoBundle 'Lokaltog/vim-powerline'
@@ -51,6 +54,7 @@ NeoBundle 'JavaScript-syntax'
 NeoBundle 'IndentAnything'
 NeoBundle 'Javascript-Indentation'
 NeoBundle 'Lucius'
+NeoBundle 'nginx.vim'
 NeoBundle 'sudo.vim'
 " NeoBundle 'larssmit/vim-lucius'
 " NeoBundle 'php_localvarcheck.vim'
@@ -172,7 +176,7 @@ set statusline+=\ %{strftime('%m\/%d\ %H:%M:%S')}  " 時間
 set statusline+=%4l,%2c " 行、列
 set statusline+=%3p%%   " どこにいるか
 set statusline+=\       " 区切り
-set statusline+=%{vcs#info('(%s)-[%b]','(%s)-[%b\|%a]')}
+" set statusline+=%{vcs#info('(%s)-[%b]','(%s)-[%b\|%a]')}
 set statusline+=%<      " 折り返しの指定
 
 " }}}
@@ -312,7 +316,7 @@ map <F8> :DbgToggleBreakpoint<CR>
     " バッファ一覧
     noremap <C-P> :Unite buffer<CR>
     " ファイル一覧
-    noremap <C-N> :Unite -buffer-name=file file<CR>
+    noremap <C-N> :Unite -buffer-name=files file file/new<CR>
     " 最近使ったファイルの一覧
     noremap <C-Z> :Unite file_mru<CR>
     " ウィンドウを分割して開く
