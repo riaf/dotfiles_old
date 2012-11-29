@@ -36,6 +36,7 @@ NeoBundle 'thinca/vim-openbuf'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'kana/vim-smartinput'
+NeoBundle 'kana/vim-operator-user'
 NeoBundle 'ujihisa/shadow.vim'
 NeoBundle 'jsx/jsx.vim'
 NeoBundle 'kchmck/vim-coffee-script'
@@ -45,17 +46,20 @@ NeoBundle 'buftabs'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'tyru/operator-html-escape.vim'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'taxilian/VimDebugger'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 't9md/vim-textmanip'
+NeoBundle 'rgarver/Kwbd.vim'
 NeoBundle 'JavaScript-syntax'
 NeoBundle 'IndentAnything'
 NeoBundle 'Javascript-Indentation'
 NeoBundle 'Lucius'
 NeoBundle 'nginx.vim'
 NeoBundle 'sudo.vim'
+NeoBundle 'docteurklein/php-getter-setter.vim'
 " NeoBundle 'larssmit/vim-lucius'
 " NeoBundle 'php_localvarcheck.vim'
 " NeoBundle 'mattn/benchvimrc-vim'
@@ -110,6 +114,8 @@ set ignorecase
 set incsearch
 " コマンドラインの補完候補表示
 set wildmenu
+" folding を無効化する
+set nofoldenable
 " □とか○の文字があってもカーソル位置がずれないようにす
 if exists('&ambiwidth')
   set ambiwidth=double
@@ -221,6 +227,9 @@ vmap <C-l> <Plug>(textmanip-move-right)
 " 行の複製 (textmanip)
 vmap <M-d> <Plug>(textmanip-duplicate-down)
 nmap <M-d> <Plug>(textmanip-duplicate-down)
+
+" html-escape
+vmap H <Plug>(operator-html-escape)
 
 " unite-outline
 noremap <C-O> :Unite outline<CR>

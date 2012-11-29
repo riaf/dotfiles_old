@@ -18,6 +18,7 @@ export LANG=ja_JP.UTF-8
 alias t=tmux
 alias ta="tmux attach -t"
 
+
 ################################################################################
 # switch env
 if [[ $OSTYPE == darwin* ]]; then
@@ -32,6 +33,7 @@ fi
 source $HOME/.zsh/git-flow-completion/git-flow-completion.zsh
 alias gf='git flow'
 
+
 ################################################################################
 # cdd
 autoload -Uz compinit
@@ -41,6 +43,7 @@ compinit
 chpwd() {
   _cdd_chpwd
 }
+
 
 ################################################################################
 # extra settings
@@ -92,6 +95,9 @@ setopt prompt_subst
 
 # 濁点 OSX
 setopt COMBINING_CHARS
+
+# 時間がかかったプロセスについてレポートだす
+REPORTTIME=3
 
 
 ################################################################################
