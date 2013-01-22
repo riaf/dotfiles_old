@@ -60,9 +60,9 @@ NeoBundle 'taxilian/VimDebugger'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 't9md/vim-textmanip'
 NeoBundle 'rgarver/Kwbd.vim'
-NeoBundle 'JavaScript-syntax'
+NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'Simple-Javascript-Indenter'
 NeoBundle 'IndentAnything'
-NeoBundle 'Javascript-Indentation'
 NeoBundle 'Lucius'
 NeoBundle 'nginx.vim'
 NeoBundle 'sudo.vim'
@@ -384,6 +384,10 @@ map <F8> :DbgToggleBreakpoint<CR>
     set statusline+=%{SyntasticStatuslineFlag()}
     set statusline+=%*
 
+  " }}}
+
+  "" Simple-Javascript-Indenter: "{{{
+    let g:SimpleJsIndenter_BriefMode = 2
   " }}}
 
   "" vim-alignta: "{{{
