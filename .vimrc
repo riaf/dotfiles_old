@@ -107,6 +107,7 @@ set title
 set hlsearch
 " モードライン有効
 set modeline
+set modelines=5
 " 新しいバッファを開くときに警告しない
 set hidden
 " エンコードは utf-8 しか使わないし
