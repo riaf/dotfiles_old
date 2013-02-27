@@ -14,8 +14,9 @@
 	interactive = auto
 [alias]
 	st = status -sb
-	up = pull --rebase
+	up = pull --rebase --prune
 	ci = commit -a
+	co = checkout
 	wd = diff --word-diff
 	lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
 	edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
