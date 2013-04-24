@@ -8,7 +8,7 @@ source $HOME/.zsh/functions
 #
 # export TERM=xterm-256color
 export EDITOR=vim
-export PATH=$HOME/local/bin:$PATH
+export PATH=$HOME/local/bin:$HOME/.local/bin:$PATH
 export LANG=ja_JP.UTF-8
 
 
@@ -17,6 +17,10 @@ export LANG=ja_JP.UTF-8
 # alias screen="sl -e"
 alias t=tmux
 alias ta="tmux attach -t"
+
+if type -p inotail > /dev/null; then
+  alias tail=inotail
+fi
 
 
 ################################################################################

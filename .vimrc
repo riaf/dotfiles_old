@@ -35,7 +35,7 @@ NeoBundle 'Shougo/vimproc', {
 " NeoBundle 'php_localvarcheck.vim'
 NeoBundle 'IndentAnything'
 NeoBundle 'JSON.vim'
-NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim' }
 NeoBundle 'Lucius'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
@@ -44,9 +44,11 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Simple-Javascript-Indenter'
+NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'buftabs'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'docteurklein/php-getter-setter.vim'
+NeoBundle 'evidens/vim-twig'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'h1mesuke/vim-alignta'
@@ -142,7 +144,6 @@ let g:html_no_pre = 1
 " autocmd: "{{{
 
   " filetype define
-  autocmd BufNewFile,BufRead *.twig setfiletype htmldjango
   autocmd BufNewFile,BufRead *.md setfiletype markdown
   autocmd BufNewFile,BufRead *.json setfiletype json
 
@@ -181,21 +182,23 @@ let g:html_no_pre = 1
 " statusline: "{{{
 
 set laststatus=2
-set statusline=
-set statusline+=[*%n]\  " バッファ番号
-set statusline+=%f\     " ファイル名
-set statusline+=%{'['.(&fenc!=''?&fenc:'?').'-'.&ff.']'} " 文字コード
-set statusline+=%m      " バッファ状態[+]とか
-set statusline+=%r      " 読み取り専用フラグ
-set statusline+=%h      " ヘルプバッファ
-set statusline+=%w      " プレビューウィンドウ
-set statusline+=%=      " 区切り
-set statusline+=\ %{strftime('%m\/%d\ %H:%M:%S')}  " 時間
-set statusline+=%4l,%2c " 行、列
-set statusline+=%3p%%   " どこにいるか
-set statusline+=\       " 区切り
-" set statusline+=%{vcs#info('(%s)-[%b]','(%s)-[%b\|%a]')}
-set statusline+=%<      " 折り返しの指定
+" set statusline=
+" set statusline+=[*%n]\  " バッファ番号
+" set statusline+=%f\     " ファイル名
+" set statusline+=%{'['.(&fenc!=''?&fenc:'?').'-'.&ff.']'} " 文字コード
+" set statusline+=%m      " バッファ状態[+]とか
+" set statusline+=%r      " 読み取り専用フラグ
+" set statusline+=%h      " ヘルプバッファ
+" set statusline+=%w      " プレビューウィンドウ
+" set statusline+=%=      " 区切り
+" set statusline+=\ %{strftime('%m\/%d\ %H:%M:%S')}  " 時間
+" set statusline+=%4l,%2c " 行、列
+" set statusline+=%3p%%   " どこにいるか
+" set statusline+=\       " 区切り
+" " set statusline+=%{vcs#info('(%s)-[%b]','(%s)-[%b\|%a]')}
+" set statusline+=%<      " 折り返しの指定
+
+set noshowmode
 
 " }}}
 
@@ -278,7 +281,7 @@ map <F8> :DbgToggleBreakpoint<CR>
 
   "" buftabs: "{{{
     let g:buftabs_only_basename=1 " ファイル名だけ表示
-    let g:buftabs_in_statusline=1 " ステータスラインに表示
+    " let g:buftabs_in_statusline=1 " ステータスラインに表示
     noremap <Space>n :bnext<CR>
     noremap <Space>p :bprev<CR>
     nmap <C-h> <C-w>h " Ctrl+h, Ctrl+j, Ctrl+k, Ctrl+l でウィンドウ間を移動

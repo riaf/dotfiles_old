@@ -42,4 +42,5 @@ do
     fi
 done
 
+# pip install --user git+git://github.com/Lokaltog/powerline
 
