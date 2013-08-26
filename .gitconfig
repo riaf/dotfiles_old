@@ -19,6 +19,7 @@
 	co = checkout
 	wd = diff --word-diff
 	lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
+	gr = grep -n --color
 	edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
 [push]
 	default = tracking

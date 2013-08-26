@@ -35,7 +35,6 @@ NeoBundle 'Shougo/vimproc', {
 " NeoBundle 'php_localvarcheck.vim'
 NeoBundle 'IndentAnything'
 NeoBundle 'JSON.vim'
-NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim' }
 NeoBundle 'Lucius'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
@@ -53,6 +52,7 @@ NeoBundle 'groenewege/vim-less'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'heavenshell/unite-sf2'
+NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'jade.vim'
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'jsx/jsx.vim'
@@ -130,9 +130,9 @@ set wildmenu
 " folding を無効化する
 set nofoldenable
 " □とか○の文字があってもカーソル位置がずれないようにす
-if exists('&ambiwidth')
-  set ambiwidth=double
-endif
+" if exists('&ambiwidth')
+"   set ambiwidth=double
+" endif
 " :TOHtml のために
 let g:use_xhtml = 1
 let g:html_use_css = 1
@@ -182,22 +182,6 @@ let g:html_no_pre = 1
 " statusline: "{{{
 
 set laststatus=2
-" set statusline=
-" set statusline+=[*%n]\  " バッファ番号
-" set statusline+=%f\     " ファイル名
-" set statusline+=%{'['.(&fenc!=''?&fenc:'?').'-'.&ff.']'} " 文字コード
-" set statusline+=%m      " バッファ状態[+]とか
-" set statusline+=%r      " 読み取り専用フラグ
-" set statusline+=%h      " ヘルプバッファ
-" set statusline+=%w      " プレビューウィンドウ
-" set statusline+=%=      " 区切り
-" set statusline+=\ %{strftime('%m\/%d\ %H:%M:%S')}  " 時間
-" set statusline+=%4l,%2c " 行、列
-" set statusline+=%3p%%   " どこにいるか
-" set statusline+=\       " 区切り
-" " set statusline+=%{vcs#info('(%s)-[%b]','(%s)-[%b\|%a]')}
-" set statusline+=%<      " 折り返しの指定
-
 set noshowmode
 
 " }}}
@@ -205,10 +189,8 @@ set noshowmode
 " ------------------------------------------------------------------------------
 " colorscheme: "{{{
 
-" let g:solarized_termcolors=256
 set background=dark
 colorscheme lucius
-" colorscheme solarized
 
 " }}}
 
@@ -288,6 +270,56 @@ map <F8> :DbgToggleBreakpoint<CR>
     nmap <C-l> <C-w>l
     nmap <C-j> <C-w>j
     nmap <C-k> <C-w>k
+  " }}}
+
+  "" lightline: "{{{
+    let g:lightline = {
+          \ 'colorscheme': 'wombat',
+          \ 'active': {
+          \   'left': [ [ 'mode', 'paste' ],
+          \             [ 'fugitive', 'filename' ] ]
+          \ },
+          \ 'component_function': {
+          \   'fugitive': 'LightlineFugitive',
+          \   'readonly': 'LightlineReadonly',
+          \   'modified': 'LightlineModified',
+          \   'filename': 'LightlineFilename'
+          \ },
+          \ 'separator': { 'left': '', 'right': '' },
+          \ 'subseparator': { 'left': '', 'right': '' },
+          \ }
+
+    function! LightlineModified()
+      if &filetype == "help"
+        return ""
+      elseif &modified
+        return "+"
+      elseif &modifiable
+        return ""
+      else
+        return ""
+      endif
+    endfunction
+
+    function! LightlineReadonly()
+      if &filetype == "help"
+        return ""
+      elseif &readonly
+        return ""
+      else
+        return ""
+      endif
+    endfunction
+
+    function! LightlineFugitive()
+      return exists('*fugitive#head') ? ' ' . fugitive#head() : ''
+    endfunction
+
+    function! LightlineFilename()
+      return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
+           \ ('' != expand('%t') ? expand('%t') : '[No Name]') .
+           \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+    endfunction
   " }}}
 
   "" neocomplcache: "{{{
@@ -373,14 +405,14 @@ map <F8> :DbgToggleBreakpoint<CR>
       " Overwrite settings.
     endfunction
       " 様々なショートカット
-    call unite#set_substitute_pattern('file', '\$\w\+', '\=eval(submatch(0))', 200)
-    call unite#set_substitute_pattern('file', '^@@', '\=fnamemodify(expand("#"), ":p:h")."/"', 2)
-    call unite#set_substitute_pattern('file', '^@', '\=getcwd()."/*"', 1)
-    call unite#set_substitute_pattern('file', '^;r', '\=$VIMRUNTIME."/"')
-    call unite#set_substitute_pattern('file', '^\~', escape($HOME, '\'), -2)
-    call unite#set_substitute_pattern('file', '\\\@<! ', '\\ ', -20)
-    call unite#set_substitute_pattern('file', '\\ \@!', '/', -30)
-    call unite#set_substitute_pattern('file', '^;v', '~/.vim/')
+    call unite#custom#substitute('file', '\$\w\+', '\=eval(submatch(0))', 200)
+    call unite#custom#substitute('file', '^@@', '\=fnamemodify(expand("#"), ":p:h")."/"', 2)
+    call unite#custom#substitute('file', '^@', '\=getcwd()."/*"', 1)
+    call unite#custom#substitute('file', '^;r', '\=$VIMRUNTIME."/"')
+    call unite#custom#substitute('file', '^\~', escape($HOME, '\'), -2)
+    call unite#custom#substitute('file', '\\\@<! ', '\\ ', -20)
+    call unite#custom#substitute('file', '\\ \@!', '/', -30)
+    call unite#custom#substitute('file', '^;v', '~/.vim/')
 
   " }}}
 
