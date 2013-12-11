@@ -28,53 +28,127 @@ NeoBundle 'Shougo/vimproc', {
         \    },
         \ }
 " NeoBundle 'Shougo/git-vim'
-" NeoBundle 'Shougo/vim-vcs'
+NeoBundleLazy 'Shougo/vim-vcs', {
+      \ 'depends' : 'thinca/vim-openbuf',
+      \ 'autoload' : {'functions' : 'vcs#info', 'commands' : 'Vcs'},
+      \   }
 " NeoBundle 'altercation/vim-colors-solarized'
 " NeoBundle 'larssmit/vim-lucius'
 " NeoBundle 'mattn/benchvimrc-vim'
 " NeoBundle 'php_localvarcheck.vim'
 NeoBundle 'IndentAnything'
-NeoBundle 'JSON.vim'
+NeoBundleLazy 'JSON.vim', {
+      \ 'autoload' : {
+      \     'filetypes' : ['json'],
+      \    },
+      \ }
 NeoBundle 'Lucius'
 NeoBundle 'Shougo/neocomplete'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/unite-ssh'
+NeoBundleLazy 'Shougo/neosnippet'
+NeoBundleLazy 'Shougo/unite-ssh'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Simple-Javascript-Indenter'
+NeoBundleLazy 'Shougo/vimfiler', {
+      \ 'depends' : 'Shougo/unite.vim',
+      \ 'autoload' : {
+      \    'commands' : [{ 'name' : 'VimFiler',
+      \                    'complete' : 'customlist,vimfiler#complete' },
+      \                  'VimFilerExplorer',
+      \                  'Edit', 'Read', 'Source', 'Write'],
+      \    'mappings' : ['<Plug>(vimfiler_switch)'],
+      \    'explorer' : 1,
+      \ }
+      \ }
+NeoBundleLazy 'Shougo/vimshell',{
+      \ 'depends' : 'Shougo/vimproc',
+      \ 'autoload' : {
+      \   'commands' : [{ 'name' : 'VimShell',
+      \                   'complete' : 'customlist,vimshell#complete'},
+      \                 'VimShellExecute', 'VimShellInteractive',
+      \                 'VimShellTerminal', 'VimShellPop'],
+      \   'mappings' : ['<Plug>(vimshell_switch)']
+      \ }}
+NeoBundleLazy 'Simple-Javascript-Indenter', {
+      \ 'autoload' : {
+      \     'filetypes' : ['js', 'html'],
+      \    },
+      \ }
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'buftabs'
-NeoBundle 'cakebaker/scss-syntax.vim'
-NeoBundle 'docteurklein/php-getter-setter.vim'
-NeoBundle 'evidens/vim-twig'
-NeoBundle 'groenewege/vim-less'
+NeoBundleLazy 'cakebaker/scss-syntax.vim', {
+      \ 'autoload' : {
+      \     'filetypes' : ['scss'],
+      \    },
+      \ }
+NeoBundleLazy 'docteurklein/php-getter-setter.vim'
+NeoBundleLazy 'evidens/vim-twig', {
+      \ 'autoload' : {
+      \     'filetypes' : ['twig'],
+      \    },
+      \ }
+NeoBundleLazy 'groenewege/vim-less', {
+      \ 'autoload' : {
+      \     'filetypes' : ['less'],
+      \    },
+      \ }
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'h1mesuke/vim-alignta'
-NeoBundle 'heavenshell/unite-sf2'
+NeoBundleLazy 'heavenshell/unite-sf2'
 NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'jade.vim'
-NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'jsx/jsx.vim'
+NeoBundleLazy 'jade.vim', {
+      \ 'autoload' : {
+      \     'filetypes' : ['jade'],
+      \    },
+      \ }
+NeoBundleLazy 'jelera/vim-javascript-syntax', {
+      \ 'autoload' : {
+      \     'filetypes' : ['js'],
+      \    },
+      \ }
+
+NeoBundleLazy 'jsx/jsx.vim', {
+      \ 'autoload' : {
+      \     'filetypes' : ['jsx'],
+      \    },
+      \ }
 NeoBundle 'kana/vim-operator-user'
 NeoBundle 'kana/vim-smartinput'
-NeoBundle 'kchmck/vim-coffee-script'
+NeoBundleLazy 'kchmck/vim-coffee-script', {
+      \ 'autoload' : {
+      \     'filetypes' : ['coffee'],
+      \    },
+      \ }
 " NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'nginx.vim'
-NeoBundle 'phpvim'
-NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'phpvim', {
+      \ 'autoload' : {
+      \     'filetypes' : ['php'],
+      \    },
+      \ }
+NeoBundleLazy 'plasticboy/vim-markdown', {
+      \ 'autoload' : {
+      \     'filetypes' : ['markdown'],
+      \    },
+      \ }
 NeoBundle 'rgarver/Kwbd.vim'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'shawncplus/phpcomplete.vim'
+NeoBundleLazy 'shawncplus/phpcomplete.vim', {
+      \ 'autoload' : {
+      \     'filetypes' : ['php'],
+      \    },
+      \ }
 NeoBundle 'sudo.vim'
 NeoBundle 't9md/vim-textmanip'
-NeoBundle 'taxilian/VimDebugger'
+NeoBundleLazy 'taxilian/VimDebugger', {
+      \ 'autoload' : {
+      \     'filetypes' : ['php'],
+      \    },
+      \ }
 NeoBundle 'thinca/vim-openbuf'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'tyru/open-browser.vim'
+NeoBundleLazy 'tyru/open-browser.vim'
 NeoBundle 'tyru/operator-html-escape.vim'
 NeoBundle 'ujihisa/shadow.vim'
 
