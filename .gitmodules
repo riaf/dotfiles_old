@@ -10,3 +10,6 @@
 [submodule "vendor/zsh-tmux-completion"]
 	path = vendor/zsh-tmux-completion
 	url = git@gist.github.com:ed31168876c79de0d2bd.git
+[submodule "vendor/xresources-hybrid"]
+	path = vendor/xresources-hybrid
+	url = https://gist.github.com/3278077.git

@@ -42,7 +42,8 @@ NeoBundleLazy 'JSON.vim', {
       \     'filetypes' : ['json'],
       \    },
       \ }
-NeoBundle 'Lucius'
+" NeoBundle 'Lucius'
+NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'Shougo/neocomplete'
 NeoBundleLazy 'Shougo/neosnippet'
 NeoBundleLazy 'Shougo/unite-ssh'
@@ -67,6 +68,7 @@ NeoBundleLazy 'Shougo/vimshell',{
       \                 'VimShellTerminal', 'VimShellPop'],
       \   'mappings' : ['<Plug>(vimshell_switch)']
       \ }}
+NeoBundle 'Shougo/unite-outline'
 NeoBundleLazy 'Simple-Javascript-Indenter', {
       \ 'autoload' : {
       \     'filetypes' : ['js', 'html'],
@@ -90,7 +92,6 @@ NeoBundleLazy 'groenewege/vim-less', {
       \     'filetypes' : ['less'],
       \    },
       \ }
-NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundleLazy 'heavenshell/unite-sf2'
 NeoBundle 'itchyny/lightline.vim'
@@ -266,7 +267,7 @@ set noshowmode
 " colorscheme: "{{{
 
 set background=dark
-colorscheme lucius
+colorscheme hybrid
 
 " }}}
 

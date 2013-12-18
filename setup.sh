@@ -8,6 +8,11 @@ if [ "$1" = '--uninstall' -o "$1" = '-u' ]; then
     uninstall=1
 fi
 
+f=".Xresources"
+i="vendor/xresources-hybrid/.Xresources-hybrid"
+echo "Create symlink ${f} to ${HOME}..."
+ln -s "`pwd`/${i}" "${HOME}/${f}"
+
 for i in .*
 do
     if [ ! -e ${i} ]; then
