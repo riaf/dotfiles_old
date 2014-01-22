@@ -95,6 +95,11 @@ NeoBundleLazy 'groenewege/vim-less', {
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundleLazy 'heavenshell/unite-sf2'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundleLazy 'itchyny/calendar.vim', {
+      \   'autoload' : {
+      \     'commands': ['Calendar'],
+      \   },
+      \ }
 NeoBundleLazy 'jade.vim', {
       \ 'autoload' : {
       \     'filetypes' : ['jade'],
@@ -138,6 +143,7 @@ NeoBundleLazy 'shawncplus/phpcomplete.vim', {
       \    },
       \ }
 NeoBundle 'sudo.vim'
+NeoBundle 'stephpy/vim-php-cs-fixer'
 NeoBundle 't9md/vim-textmanip'
 NeoBundleLazy 'taxilian/VimDebugger', {
       \ 'autoload' : {
@@ -558,6 +564,10 @@ map <F8> :DbgToggleBreakpoint<CR>
 
   "" Simple-Javascript-Indenter: "{{{
     let g:SimpleJsIndenter_BriefMode = 2
+  " }}}
+
+  "" calendar: "{{{
+    let g:calendar_google_calendar = 1
   " }}}
 
   "" vim-alignta: "{{{
