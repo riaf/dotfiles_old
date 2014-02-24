@@ -45,6 +45,7 @@ NeoBundleLazy 'JSON.vim', {
 " NeoBundle 'Lucius'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundleLazy 'Shougo/neosnippet'
 NeoBundleLazy 'Shougo/unite-ssh'
 NeoBundle 'Shougo/unite.vim'
@@ -501,7 +502,7 @@ map <F8> :DbgToggleBreakpoint<CR>
     " ctrlp
     noremap <C-P> :Unite file_rec/async:!<CR>
     " 最近使ったファイルの一覧
-    noremap <C-Z> :Unite file_mru<CR>
+    noremap <C-Z> :Unite neomru/file<CR>
     " ウィンドウを分割して開く
     au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
     au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
