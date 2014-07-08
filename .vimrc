@@ -88,6 +88,11 @@ NeoBundleLazy 'cakebaker/scss-syntax.vim', {
       \    },
       \ }
 NeoBundleLazy 'docteurklein/php-getter-setter.vim'
+NeoBundleLazy 'ekalinin/Dockerfile.vim', {
+      \ 'autoload' : {
+      \     'filetypes' : ['Dockerfile'],
+      \    },
+      \ }
 NeoBundleLazy 'evidens/vim-twig', {
       \ 'autoload' : {
       \     'filetypes' : ['twig'],
