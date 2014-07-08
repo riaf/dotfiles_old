@@ -76,6 +76,11 @@ NeoBundleLazy 'Simple-Javascript-Indenter', {
       \    },
       \ }
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundleLazy 'Blackrush/vim-gocode', {
+      \ 'autoload' : {
+      \     'filetypes' : ['go'],
+      \    },
+      \ }
 NeoBundle 'buftabs'
 NeoBundleLazy 'cakebaker/scss-syntax.vim', {
       \ 'autoload' : {
@@ -213,6 +218,10 @@ set incsearch
 set wildmenu
 " folding を無効化する
 set nofoldenable
+" スペルチェックを行う
+set spell
+" スペルチェックは日本語でやらない
+set spelllang=en,cjk
 " □とか○の文字があってもカーソル位置がずれないようにす
 " if exists('&ambiwidth')
 "   set ambiwidth=double

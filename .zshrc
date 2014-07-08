@@ -17,6 +17,7 @@ export LANG=ja_JP.UTF-8
 # alias screen="sl -e"
 alias t=tmux
 alias ta="tmux attach -t"
+alias ag='ag --color-line-number="0;33" --color-match="1;30;46" --color-path="0;37"'
 
 if type -p inotail > /dev/null; then
   alias tail=inotail
