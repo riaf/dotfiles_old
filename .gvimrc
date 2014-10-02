@@ -1,1 +1,4 @@
 set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h14
+
+set background=dark
+colorscheme hybrid
