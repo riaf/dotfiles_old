@@ -7,16 +7,16 @@
 " ------------------------------------------------------------------------------
 " neobundle setting: "{{{
 
-set nocompatible
-filetype off
+if !1 | finish | endif
 
 if has('vim_starting')
-    set runtimepath+=~/.vim/neobundle/
-
-    call neobundle#rc(expand('~/.vim/bundle'))
+  set nocompatible
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-set fileformat=unix
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles:
 NeoBundle 'Shougo/vimproc', {
@@ -171,8 +171,11 @@ NeoBundleLazy 'tyru/open-browser.vim'
 NeoBundle 'tyru/operator-html-escape.vim'
 NeoBundle 'ujihisa/shadow.vim'
 
-filetype plugin on
-filetype indent on
+call neobundle#end()
+
+filetype plugin indent on
+
+NeoBundleCheck
 
 " }}}
 
@@ -215,6 +218,7 @@ set encoding=utf-8
 " スワップファイルは /tmp に作る
 set directory=/tmp
 " 改行コードの自動認識
+set fileformat=unix
 set fileformats=unix,dos,mac
 " 検索時に大文字小文字を無視する
 set ignorecase

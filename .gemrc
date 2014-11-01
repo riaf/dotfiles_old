@@ -9,4 +9,3 @@ gem: --no-ri --no-rdoc
 - http://gems.github.com
 - http://gems.github.com
 :benchmark: false
-custom_shebang: $env ruby_bundler_wrapper

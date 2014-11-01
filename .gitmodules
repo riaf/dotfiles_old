@@ -1,9 +1,6 @@
 [submodule ".zsh/git-flow-completion"]
 	path = .zsh/git-flow-completion
 	url = git://github.com/bobthecow/git-flow-completion.git
-[submodule ".vim/neobundle"]
-	path = .vim/neobundle
-	url = git://github.com/Shougo/neobundle.vim.git
 [submodule "vendor/cdd"]
 	path = vendor/cdd
 	url = git://github.com/m4i/cdd.git
@@ -13,3 +10,6 @@
 [submodule "vendor/xresources-hybrid"]
 	path = vendor/xresources-hybrid
 	url = https://gist.github.com/3278077.git
+[submodule ".vim/bundle/neobundle.vim"]
+	path = .vim/bundle/neobundle.vim
+	url = git://github.com/Shougo/neobundle.vim.git
