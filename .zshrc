@@ -43,7 +43,7 @@ alias gf='git flow'
 # cdd
 autoload -Uz compinit
 compinit
-. $HOME/dotfiles/vendor/cdd/cdd
+. $HOME/.zsh/cdd
 
 chpwd() {
   _cdd_chpwd
