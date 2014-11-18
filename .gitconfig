@@ -22,7 +22,7 @@
 	gr = grep -n --color
 	edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
 [push]
-	default = tracking
+	default = current
 [pager]
 	log = diff-highlight | less
 	show = diff-highlight | less
