@@ -1,0 +1,12 @@
+GPATH
+GRTAGS
+GSYMS
+GTAGS
+/.zsh/history
+/.zsh/screen-hardcopy
+/.zsh/extras
+/.vim/.netrwhist
+/.vim/bundle
+/.doc/php
+.AppleDouble/
+.DS_Store
