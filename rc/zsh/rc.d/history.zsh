@@ -1,4 +1,4 @@
-autoload history-search-end
+autoload -U history-search-end
 
 HISTFILE=~/.zsh/history
 HISTSIZE=100000
