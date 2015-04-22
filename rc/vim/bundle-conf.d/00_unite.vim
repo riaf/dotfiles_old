@@ -23,6 +23,16 @@ function! s:unite_my_settings()
   " Overwrite settings.
 endfunction
 
+" 様々なショートカット
+call unite#custom#substitute('file', '\$\w\+', '\=eval(submatch(0))', 200)
+call unite#custom#substitute('file', '^@@', '\=fnamemodify(expand("#"), ":p:h")."/"', 2)
+call unite#custom#substitute('file', '^@', '\=getcwd()."/*"', 1)
+call unite#custom#substitute('file', '^;r', '\=$VIMRUNTIME."/"')
+call unite#custom#substitute('file', '^\~', escape($HOME, '\'), -2)
+call unite#custom#substitute('file', '\\\@<! ', '\\ ', -20)
+call unite#custom#substitute('file', '\\ \@!', '/', -30)
+call unite#custom#substitute('file', '^;v', '~/.vim/')
+
 " Use ag
 if executable('ag')
   let g:unite_source_grep_command = 'ag'
