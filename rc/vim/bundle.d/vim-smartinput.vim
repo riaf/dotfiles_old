@@ -1,2 +1,0 @@
-NeoBundle 'kana/vim-smartinput'
-

@@ -1,2 +1,0 @@
-NeoBundleLazy 'Shougo/unite-ssh'
-

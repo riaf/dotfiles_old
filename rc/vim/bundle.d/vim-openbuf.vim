@@ -1,2 +1,0 @@
-NeoBundle 'thinca/vim-openbuf'
-

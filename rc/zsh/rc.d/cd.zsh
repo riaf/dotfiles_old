@@ -6,3 +6,4 @@ setopt auto_cd
 #
 setopt auto_pushd
 
+function chpwd() { ls }

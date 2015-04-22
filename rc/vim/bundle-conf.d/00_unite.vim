@@ -1,5 +1,3 @@
-NeoBundle 'Shougo/unite.vim'
-
 " 入力モードで開始する
 let g:unite_enable_start_insert=1
 " バッファ一覧

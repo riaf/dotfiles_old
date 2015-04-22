@@ -1,2 +1,0 @@
-NeoBundle 'nginx.vim'
-

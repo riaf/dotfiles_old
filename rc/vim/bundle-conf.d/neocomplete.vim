@@ -1,5 +1,3 @@
-NeoBundle 'Shougo/neocomplete'
-
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.

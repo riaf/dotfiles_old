@@ -1,5 +1,3 @@
-NeoBundle 't9md/vim-textmanip'
-
 " 選択したテキストの移動 (textmanip)
 vmap <C-j> <Plug>(textmanip-move-down)
 vmap <C-k> <Plug>(textmanip-move-up)

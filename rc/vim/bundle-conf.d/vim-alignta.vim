@@ -1,5 +1,3 @@
-NeoBundle 'h1mesuke/vim-alignta'
-
 nnoremap [unite] <Nop>
 xnoremap [unite] <Nop>
 nmap f [unite]
