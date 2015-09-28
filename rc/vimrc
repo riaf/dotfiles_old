@@ -44,6 +44,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundle 'Shougo/neomru.vim'
   NeoBundleLazy 'Shougo/neosnippet'
   NeoBundle 'nginx.vim'
+  NeoBundle 'chase/vim-ansible-yaml'
   NeoBundle 'tyru/operator-html-escape.vim'
   NeoBundleLazy 'shawncplus/phpcomplete.vim', {
         \ 'autoload' : {

@@ -10,3 +10,4 @@ GTAGS
 /.doc/php
 .AppleDouble/
 .DS_Store
+.envrc
