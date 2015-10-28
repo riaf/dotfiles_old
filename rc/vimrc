@@ -42,7 +42,8 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundle 'itchyny/lightline.vim'
   NeoBundle 'Shougo/neocomplete'
   NeoBundle 'Shougo/neomru.vim'
-  NeoBundleLazy 'Shougo/neosnippet'
+  NeoBundle 'Shougo/neosnippet'
+  NeoBundle 'Shougo/neosnippet-snippets'
   NeoBundle 'nginx.vim'
   NeoBundle 'chase/vim-ansible-yaml'
   NeoBundle 'tyru/operator-html-escape.vim'
@@ -109,7 +110,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
         \ }
   NeoBundle 'thinca/vim-quickrun'
   NeoBundle 'thinca/vim-ref'
-  NeoBundle 'kana/vim-smartinput'
+  NeoBundle 'cohama/lexima.vim'
   NeoBundle 'tpope/vim-surround'
   NeoBundle 't9md/vim-textmanip'
   NeoBundle 'qbbr/vim-twig'
