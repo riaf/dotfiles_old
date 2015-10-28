@@ -63,7 +63,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
         \ }
   NeoBundleLazy 'jiangmiao/simple-javascript-indenter', {
         \ 'autoload' : {
-        \     'filetypes' : ['js', 'html'],
+        \     'filetypes' : ['js', 'html', 'jsx'],
         \    },
         \ }
   NeoBundle 'sudo.vim'
@@ -97,22 +97,22 @@ call neobundle#begin(expand('~/.vim/bundle/'))
         \ }
   NeoBundleLazy 'plasticboy/vim-markdown', {
         \ 'autoload' : {
-        \     'filetypes' : ['markdown'],
+        \     'filetypes' : ['markdown', 'md'],
         \    },
         \ }
   NeoBundle 'thinca/vim-openbuf'
   NeoBundle 'kana/vim-operator-user'
-  NeoBundle 'stephpy/vim-php-cs-fixer'
+  NeoBundle 'dericofilho/vim-phpfmt', {
+        \ 'autoload' : {
+        \     'filetypes' : ['php'],
+        \    },
+        \ }
   NeoBundle 'thinca/vim-quickrun'
   NeoBundle 'thinca/vim-ref'
   NeoBundle 'kana/vim-smartinput'
   NeoBundle 'tpope/vim-surround'
   NeoBundle 't9md/vim-textmanip'
-  NeoBundleLazy 'evidens/vim-twig', {
-        \ 'autoload' : {
-        \     'filetypes' : ['twig'],
-        \    },
-        \ }
+  NeoBundle 'qbbr/vim-twig'
   NeoBundleLazy 'Shougo/vim-vcs', {
         \ 'depends' : 'thinca/vim-openbuf',
         \ 'autoload' : {'functions' : 'vcs#info', 'commands' : 'Vcs'},
