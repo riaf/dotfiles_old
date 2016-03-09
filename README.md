@@ -1,27 +1,24 @@
 dotfiles
 ========
 
-Use
----
+Usage
+-----
 
 ### Install
 
 ```
-ghq get -p riaf/dotfiles
-ghq look dotfiles
-make
+ghq get -p riaf/dotfiles; ghq look dotfiles; make
 ```
 
 ### Update
 
 ```
-ghq look dotfiles
-make update
+ghq look dotfiles; make update
 ```
 
 
-Thanks
-------
+See also
+--------
 
-@bto さんの [dotfiles](https://bitbucket.org/btomasato/dotfiles) をかなりパクってます。えへへ。
+* [dotfilesの設定を自動化する - OTOBANK Engineering Blog](http://engineering.otobank.co.jp/entry/2015/04/09/180300)
 
