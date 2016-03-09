@@ -145,7 +145,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
         \    },
         \ }
   NeoBundleLazy 'Shougo/vimshell',{
-        \ 'depends' : 'Shougo/vimproc',
+        \ 'depends' : 'Shougo/vimproc.vim',
         \ 'autoload' : {
         \   'commands' : [{ 'name' : 'VimShell',
         \                   'complete' : 'customlist,vimshell#complete'},

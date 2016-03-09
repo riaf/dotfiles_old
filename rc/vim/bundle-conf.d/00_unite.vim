@@ -95,7 +95,7 @@ elseif executable('ag')
   " Using ag as recursive command.
   let g:unite_source_rec_async_command =
   \ ['ag', '--follow', '--nocolor', '--nogroup',
-  \  '--hidden', '-g', '']
+  \  '-g', '']
 elseif executable('pt')
   " Use pt(the platinum searcher)
   " https://github.com/monochromegane/the_platinum_searcher
