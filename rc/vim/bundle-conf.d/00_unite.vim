@@ -77,6 +77,13 @@ call unite#custom#substitute('file', '^;v', '~/.vim/')
 
 let g:unite_source_grep_max_candidates = 200
 
+if executable('ag')
+  " Using ag as recursive command.
+  let g:unite_source_rec_async_command =
+  \ ['ag', '--follow', '--nocolor', '--nogroup',
+  \  '-g', '']
+endif
+
 if executable('hw')
   " Use hw(highway)
   " https://github.com/tkengo/highway
@@ -91,11 +98,6 @@ elseif executable('ag')
   \ '-i --vimgrep --hidden --ignore ' .
   \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
   let g:unite_source_grep_recursive_opt = ''
-
-  " Using ag as recursive command.
-  let g:unite_source_rec_async_command =
-  \ ['ag', '--follow', '--nocolor', '--nogroup',
-  \  '-g', '']
 elseif executable('pt')
   " Use pt(the platinum searcher)
   " https://github.com/monochromegane/the_platinum_searcher
