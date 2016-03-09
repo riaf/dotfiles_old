@@ -16,9 +16,7 @@ INSTALL_TARGETS +=
 TEST_TARGETS +=
 UPDATE_TARGETS +=
 
-include config/Makefile.d/*/var.mk
--include config/var.mk
-
+include Makefile.d/*/var.mk
 
 .PHONY: all
 all: $(ALL_TARGETS)
@@ -48,6 +46,5 @@ test: $(TEST_TARGETS)
 .PHONY: update
 update: $(UPDATE_TARGETS)
 
-include config/Makefile.d/*/task.mk
--include config/task.mk
+include Makefile.d/*/task.mk
 
