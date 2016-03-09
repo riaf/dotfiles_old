@@ -1,13 +1,11 @@
 .PHONY: vim-install
-vim-install: $(VIM_NEOBUNDLE)
+vim-install: $(VIM_DEIN)
 
 .PHONY: vim-update
 vim-update:
-	cd $(VIM_NEOBUNDLE); git pull --rebase origin master
-	sh $(VIM_NEOBUNDLE)/bin/neoinstall
+	cd $(VIM_DEIN); git pull --rebase origin master
 
-$(VIM_NEOBUNDLE):
-	mkdir -p $(VIM_BUNDLE_DIR)
-	git clone $(VIM_NEOBUNDLE_REPO) $@
-	sh $@/bin/neoinstall
+$(VIM_DEIN):
+	mkdir -p $(DEIN_DIR)
+	git clone $(VIM_DEIN_REPO) $@
 

@@ -1,4 +1,10 @@
-.PHONY: zsh-compile
-zsh-compile:
-	find $(ZSH_DIR)/ -type f -name "*.zsh" -print0 | xargs -0 -I{} zsh -c "zcompile {}"
+.PHONY: zplug-install
+zplug-install: $(ZPLUG_DIR)
+
+.PHONY: zplug-update
+zplug-update:
+	cd $(ZPLUG_DIR); git pull --rebase origin master
+
+$(ZPLUG_DIR):
+	git clone $(ZPLUG_REPO) $(ZPLUG_DIR)
 

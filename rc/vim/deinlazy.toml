@@ -1,0 +1,79 @@
+[[plugins]]
+repo = 'ekalinin/Dockerfile.vim'
+on_ft = 'Dockerfile'
+
+[[plugins]]
+repo = 'JSON.vim'
+on_ft = 'json'
+
+[[plugins]]
+repo = 'itchyny/calendar.vim'
+on_cmd = 'Calendar'
+
+[[plugins]]
+repo = 'jade.vim'
+on_ft = 'jade'
+
+[[plugins]]
+repo = 'shawncplus/phpcomplete.vim'
+on_ft = 'php'
+
+[[plugins]]
+repo = 'phpvim'
+on_ft = 'php'
+
+[[plugins]]
+repo = 'dericofilho/vim-phpfmt'
+on_ft = 'php'
+
+[[plugins]]
+repo = 'cakebaker/scss-syntax.vim'
+on_ft = 'scss'
+
+[[plugins]]
+repo = 'heavenshell/unite-sf2'
+
+[[plugins]]
+repo = 'Shougo/unite-ssh'
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+on_ft = 'coffee'
+
+[[plugins]]
+repo = 'Blackrush/vim-gocode'
+on_ft = 'go'
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = 'typescript'
+
+[[plugins]]
+repo = 'Quramy/tsuquyomi'
+on_ft = 'typescript'
+
+[[plugins]]
+repo = 'jelera/vim-javascript-syntax'
+on_ft = ['javascript', 'html', 'twig']
+
+[[plugins]]
+repo = 'groenewege/vim-less'
+on_ft = 'less'
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = ['md', 'markdown']
+
+[[plugins]]
+repo = 'Shougo/vim-vcs'
+depends = 'thinca/vim-openbuf'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+depends = 'unite.vim'
+on_map = '<Plug>'
+on_path = '.*'
+
+[[plugins]]
+repo = 'Shougo/vimshell.vim'
+on_map = '<Plug>'
