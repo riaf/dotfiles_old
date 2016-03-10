@@ -18,9 +18,6 @@ repo = 'editorconfig/editorconfig-vim'
 repo = 'itchyny/lightline.vim'
 
 [[plugins]]
-repo = 'Shougo/neocomplete'
-
-[[plugins]]
 repo = 'Shougo/neomru.vim'
 
 [[plugins]]
