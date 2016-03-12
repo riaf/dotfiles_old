@@ -4,3 +4,6 @@
 *.zwc
 .chpwd-recent-dirs
 rc/vim/init.vim
+/config.sh
+/task.mk
+/var.mk
