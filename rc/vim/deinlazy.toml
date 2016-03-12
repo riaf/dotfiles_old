@@ -87,3 +87,11 @@ on_path = '.*'
 [[plugins]]
 repo = 'Shougo/vimshell.vim'
 on_map = '<Plug>'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]]
+repo = 'tmux-plugins/vim-tmux'
+on_ft = 'tmux'
