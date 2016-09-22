@@ -11,3 +11,4 @@ GTAGS
 .AppleDouble/
 .DS_Store
 .envrc
+*.retry

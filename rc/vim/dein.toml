@@ -59,8 +59,8 @@ repo = 'airblade/vim-gitgutter'
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
 
-[[plugins]]
-repo = 'jason0x43/vim-js-indent'
+# [[plugins]]
+# repo = 'jason0x43/vim-js-indent'
 
 [[plugins]]
 repo = 'thinca/vim-openbuf'

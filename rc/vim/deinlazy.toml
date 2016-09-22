@@ -32,9 +32,9 @@ on_ft = 'php'
 repo = 'phpvim'
 on_ft = 'php'
 
-[[plugins]]
-repo = 'dericofilho/vim-phpfmt'
-on_ft = 'php'
+# [[plugins]]
+# repo = 'dericofilho/vim-phpfmt'
+# on_ft = 'php'
 
 [[plugins]]
 repo = 'cakebaker/scss-syntax.vim'
@@ -62,9 +62,9 @@ on_ft = 'typescript'
 repo = 'Quramy/tsuquyomi'
 on_ft = 'typescript'
 
-[[plugins]]
-repo = 'jelera/vim-javascript-syntax'
-on_ft = ['javascript', 'html', 'twig']
+# [[plugins]]
+# repo = 'jelera/vim-javascript-syntax'
+# on_ft = ['javascript', 'html', 'twig']
 
 [[plugins]]
 repo = 'groenewege/vim-less'
