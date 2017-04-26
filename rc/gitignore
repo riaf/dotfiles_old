@@ -12,3 +12,4 @@ GTAGS
 .DS_Store
 .envrc
 *.retry
+.fab_tasks~

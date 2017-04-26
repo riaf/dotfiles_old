@@ -1,6 +1,6 @@
 source ~/.zplug/init.zsh
 
-zplug "peco/peco", as:command, from:gh-r, use:"*amd64*"
+# zplug "peco/peco", as:command, from:gh-r, use:"*amd64*"
 zplug "mollifier/anyframe"
 zplug "mollifier/cd-gitroot"
 zplug "b4b4r07/enhancd", use:enhancd.sh
