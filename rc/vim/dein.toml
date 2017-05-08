@@ -9,7 +9,7 @@ build = 'make'
 repo = 'Shougo/unite.vim'
 
 [[plugins]]
-repo = 'IndentAnything'
+repo = 'vim-scripts/IndentAnything'
 
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
@@ -30,7 +30,7 @@ repo = 'Shougo/neosnippet-snippets'
 repo = 'Shougo/tabpagebuffer.vim'
 
 [[plugins]]
-repo = 'nginx.vim'
+repo = 'vim-scripts/nginx.vim'
 
 [[plugins]]
 repo = 'chase/vim-ansible-yaml'
@@ -39,7 +39,7 @@ repo = 'chase/vim-ansible-yaml'
 repo = 'tyru/operator-html-escape.vim'
 
 [[plugins]]
-repo = 'sudo.vim'
+repo = 'vim-scripts/sudo.vim'
 
 [[plugins]]
 repo = 'scrooloose/syntastic'

@@ -13,7 +13,7 @@ repo = 'ekalinin/Dockerfile.vim'
 on_ft = 'Dockerfile'
 
 [[plugins]]
-repo = 'JSON.vim'
+repo = 'vim-scripts/JSON.vim'
 on_ft = 'json'
 
 [[plugins]]
@@ -21,7 +21,7 @@ repo = 'itchyny/calendar.vim'
 on_cmd = 'Calendar'
 
 [[plugins]]
-repo = 'jade.vim'
+repo = 'vim-scripts/jade.vim'
 on_ft = 'jade'
 
 [[plugins]]
@@ -29,7 +29,7 @@ repo = 'shawncplus/phpcomplete.vim'
 on_ft = 'php'
 
 [[plugins]]
-repo = 'phpvim'
+repo = 'vim-scripts/phpvim'
 on_ft = 'php'
 
 # [[plugins]]
